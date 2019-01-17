@@ -1,5 +1,6 @@
-a = int(input())
-while a//10 >= 1:
-    print(a%10)
-    a = a //10
-print(a)
+a = ["яблоко", "банан", "киви", "арбуз"]
+b = 1
+
+for i in range(len(a)):
+    print(b,".",'{:>7}'.format(a[i]))
+    b += 1
