@@ -1,12 +1,6 @@
-a = int(input())
-max = 0
-b = 0
-while a//10 >=1:
-    b = a%10 
-    if b > max:
-        max = b
-    a = a//10
-if a>max:
-    print(a)
-else:
-    print(max)
+a = [4,3,9,16]
+b = []
+for i in a:
+    if i>=0 and (i**0.5) % 1 == 0 :
+        b.append(int(i**0.5))
+print(b)
