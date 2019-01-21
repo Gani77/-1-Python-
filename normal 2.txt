@@ -1,5 +1,8 @@
-a = int(input())
-b = int(input())
-a,b = b,a
-print(a)
-print(b)
+def sort_to_max(a):
+    c = len(a)
+    b = []
+    for i in range(c):
+        b.append(min(a))
+        a.remove(min(a))
+    return b
+print(sort_to_max([1,4,3,2,5]))
