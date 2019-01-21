@@ -1,6 +1,17 @@
-a = int(input())
-b = int(input())
-c = a
-a = b
-print(a)
-print(c)
+def lucky_ticket(ticket_number):
+    a = []
+    sum1 = 0
+    sum2 = 0
+    for i in str(ticket_number):
+        a.append(int(i))
+    if len(a) == 6:
+        for j in range(3):
+            sum1 += a[j]
+            sum2 += a[j+3]
+        if sum1 == sum2:
+            return "\n  ----- Congratulation! You won 1.000.000 $ ^_^ -----"
+        else:
+            return "\n  Better luck next time!"
+    else:
+        return "\n   Where did you buy your ticket? It should have 6 numbers!"
+print(lucky_ticket(123005))

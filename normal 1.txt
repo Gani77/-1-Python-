@@ -1,12 +1,9 @@
-a = int(input())
-max = 0
-b = 0
-while a//10 >=1:
-    b = a%10 
-    if b > max:
-        max = b
-    a = a//10
-if a>max:
-    print(a)
-else:
-    print(max)
+def fib(n,m):
+   a = []
+   for i in range(m):
+      if i == 1 or i == 0:
+         a.append(1)
+      else:                      
+         a.append(a[i-1] + a[i-2])  
+   return a
+print(fib(1,6))
