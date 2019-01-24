@@ -1,0 +1,33 @@
+#без помощи наставника никогда бы не сделал это(не мог найти последовательность повторяющихся чисел)
+
+import re, random, os
+
+list2500simbol = [str(random.randint(0, 9)) for _ in range(2500)]
+spNumber = ''
+
+for _ in list2500simbol:
+    spNumber += _
+
+path = os.path.join('data', '2500simbols.txt')
+with open(path, 'w', encoding='UTF-8') as file:
+    file.write(spNumber)
+with open(path, 'r', encoding='UTF-8') as file:
+    p = file.readlines()
+maximum = countElement = 0
+sprav = []
+
+for element in range(10):
+    for number in range(2500):
+        if element == int(p[0][number]):
+            countElement += 1
+            if maximum < countElement:
+                maximum = countElement
+        else:
+            countElement = 0
+   
+    sprav.append(maximum)
+
+print('\nСамая длинная последовательность у чисел:\n')
+for _ in range(10):
+    if sprav[_] == max(sprav):
+        print('  {} - повторяется в ряду {} раз(а);\n' .format(_, max(sprav)))
